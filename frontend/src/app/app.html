@@ -1,0 +1,31 @@
+<main class="page">
+  <section class="card">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">Mini app d'entretien: BFF C# + Angular</p>
+
+    @if (loading) {
+      <p>Chargement...</p>
+    } @else {
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Experience</th>
+            <th>Skills</th>
+            <th>Dispo</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (c of candidates; track c.id) {
+            <tr>
+              <td>{{ c.firstName }} {{ c.lastName }}</td>
+              <td>{{ c.yearsOfExperience }}</td>
+              <td>{{ (c.skills || []).join(', ') }}</td>
+              <td>{{ c.isAvailable ? 'Oui' : 'Non' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </section>
+</main>

@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/bff/">
+    <Project Path="bff/InterviewLab.Bff.csproj" />
+  </Folder>
+</Solution>
