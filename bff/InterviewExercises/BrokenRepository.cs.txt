@@ -1,0 +1,13 @@
+// Intentional syntax errors for interview practice.
+// This file is not compiled.
+
+namespace InterviewLab.Bff.InterviewExercises;
+
+public class BrokenRepository
+{
+    public IEnumerable<string> GetNames()
+    {
+        var names = new List<string> { "A", "B", "C" }
+        return names.Where(n => n.Length > 0)
+    }
+}

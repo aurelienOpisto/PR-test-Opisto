@@ -3,6 +3,23 @@
     <h1>{{ title }}</h1>
     <p class="subtitle">Mini app d'entretien: BFF C# + Angular</p>
 
+    <div class="filters">
+      <input
+        type="text"
+        placeholder="Rechercher par nom"
+        [(ngModel)]="search"
+      />
+
+      <select [(ngModel)]="selectedSkill">
+        <option value="">Toutes les competences</option>
+        @for (skill of availableSkills; track skill) {
+          <option [value]="skill">{{ skill }}</option>
+        }
+      </select>
+
+      <button (click)="loadCandidates()">Rafraichir</button>
+    </div>
+
     @if (loading) {
       <p>Chargement...</p>
     } @else {
@@ -16,7 +33,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (c of candidates; track c.id) {
+          @for (c of filteredCandidates; track c.id) {
             <tr>
               <td>{{ c.firstName }} {{ c.lastName }}</td>
               <td>{{ c.yearsOfExperience }}</td>

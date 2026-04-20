@@ -1,0 +1,13 @@
+// Intentional syntax errors for interview practice.
+// This file is not compiled.
+
+export class BrokenService {
+  getCandidates() {
+    const data = [{ id: 1, name: 'Lina' }, { id: 2, name: 'Hugo' }]
+    return data.map(x => x.name)
+  }
+
+  filterByName(list, value) {
+    return list.filter(item => item.name.toLowerCase().includes(value.toLowerCase())
+  }
+}

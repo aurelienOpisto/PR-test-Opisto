@@ -1,10 +1,10 @@
-# InterviewLab - Base C# + Angular
+# InterviewLab - PR d'entretien (branche avec erreurs)
 
-Base propre pour une revue de PR d'entretien.
+Cette branche est volontairement imparfaite pour simuler une vraie PR de revue technique.
 
 Le principe:
 - `main` contient une version simple et saine.
-- une branche de PR ajoute des endpoints et des erreurs volontaires pour discussion technique.
+- `feature/interview-pr-errors` ajoute des endpoints et des erreurs volontaires.
 
 ## Structure
 
@@ -34,7 +34,19 @@ npm start
 
 Application disponible sur `http://localhost:4200`.
 
-## Endpoints de base
+## Endpoints proposes dans cette PR
 
 - `GET /api/candidates`
 - `GET /api/candidates/{id}`
+- `GET /api/candidates/search?skill=...`
+- `POST /api/candidates`
+
+## Exemples d'erreurs volontaires
+
+- Typage faible cote Angular (`any[]`)
+- Tri en place dans un getter
+- Donnees statiques mutables cote API
+- Endpoint de recherche sans robustesse sur les entrees
+- Snippets avec erreurs de syntaxe hors build:
+	- `bff/InterviewExercises/BrokenRepository.cs.txt`
+	- `frontend/InterviewExercises/broken-service.ts.txt`
